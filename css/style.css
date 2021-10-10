@@ -1,0 +1,24 @@
+.puntuation{
+    color: #88C6BE;
+}
+.keyword{
+    color:#286DD3;
+}
+.htmlElement{
+    color:#FC929E;
+}
+.string{
+    color:#8DC891;
+}
+.important-idea{
+    color:#6d6d6d;
+}
+.code-container{
+    background-color:#282C34;
+    max-width: 516px;
+}
+code{
+    background: #282C34;
+    color: #FFFFFF;
+    line-height: 0px;
+}
