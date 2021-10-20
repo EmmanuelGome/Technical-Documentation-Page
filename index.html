@@ -27,9 +27,9 @@
         </ul>
     </nav>
     <main id="main-doc">
-        <section id="Hello_World" class="main-section">
+        <section id="Hello_World" class="container main-section">
             <header>Hello world</header>
-            <div class="container">
+            <div>
                 <p class="important-idea">The smallest Ract example looks like this:</p>
                 <div class="container code-container">
                     <code>ReactDOM<span class="puntuation">.</span><span class="keyword">render</span><span class="puntuation">(</span><br>
@@ -39,7 +39,8 @@
                     </code>
                 </div>
                 <p>It displays a heading saying "Hello, world!" on the page.</p>
-                <p><a href="https://codepen.io/pen?&editors=0010&prefill_data_id=0fc32e95-aa2b-40f5-a742-141dda860038">Try it on a CodePen</a></p>
+                <p><a href="https://codepen.io/pen?&editors=0010&prefill_data_id=0fc32e95-aa2b-40f5-a742-141dda860038">Try
+                        it on a CodePen</a></p>
                 <p>Click the ling above to open an online editos. Feel free to make some changes,
                     and see how they affect the output. Most pages in this guide will have editable
                     examples like this one.
@@ -50,13 +51,90 @@
                     elements and components. Once you master them, you can create complex componentsapplication
                     apps form small reusable pieces.
                 </p>
+                <p>This is the first chapter in a step-by-step guide about main React concepts.
+                    You can find a list of all its chapters in the navigation sidebar. If you´re reading
+                    this form a mobile device, you can access the navigation by pressing the button in the
+                    bottom right corner of your screen.
+                </p>
+                <p>Every chapter in this guide builds on the knowledge introduces in earlier chapters.
+                    <strong>You can learn most of React by reading the "Main Concepts" guide chapters in the
+                        order they appear in the sidebar.</strong> For example, <a href="#Introducing_Jsx">"Introducing
+                        JSX"</a>
+                    is the next chapter after this one.
+                </p>
             </div>
         </section>
-        <section id="Introducing_Jsx" class="main-section">
+
+        <section id="Introducing_Jsx" class="container main-section">
             <header>Introducing JSX</header>
+            <div>
+                <p class="important-idea">consider this variable declaration:</p>
+                <div class="container code-container">
+                    <code>
+                        <span class="keyword">const</span>
+                        <span class="">element</span>
+                        <span class="puntuation">=</span>
+                        <span class="puntuation"><</span><span class="htmlElement">h1</span><span class="puntuation">></span>
+                        <span class="">Hello, world!</span>
+                        <span class="puntuation">&lt;/</span><span class="htmlElement">h1</span><span class="puntuation">>;</span>
+                    </code>
+                </div>
+                <p>This funny tag syntax is neither a string not HTML.</p>
+                <p>It is called JSX, and it is a syntax extension to JavaScript. We recommend using it
+                    with React to describe what the UI should look like. JSX may remind you of a template
+                    language, but it comes with the full power of JavaScript.
+                </p>
+                <p>JSX produces React "elements". We will explores rendering them to the DOM in the <a href="">next
+                        section</a>.
+                    Below, you can find the basiscs of JSX necessary to get you started.
+                </p>
+                <hr>
+                <h2>Why JSX?</h2>
+                <p>React embraces the fact that rendering logic is inherently coupled with other UI logic:
+                    how events are handled, how the satate changes over time, and how data is prepared for display.
+                </p>
+                <p>Instead of artificially separating <em>technologies</em> by putting markup and logic in separate
+                    files,
+                    React <a href="https://en.wikipedia.org/wiki/Separation_of_concerns">separate concerns</a> with
+                    loosely coupled
+                    units called "components" that contain both. We will come back to components in a <a
+                        href="#Components_and_Props">further section</a>, but if you're
+                    not comfortable putting markup, <a
+                        href="https://www.youtube.com/watch?v=x7cQ3mrcKaY&ab_channel=JSConf">this talk</a> might
+                    convince you otherwise.
+                </p>
+                <p>React doesn't require using JSX, buy most people find it helpful as a visual aid when working with
+                    UI inside JavaScript code. It also allows REact to show more usefur error and warnisng messages.
+                </p>
+                <p>With that out of the way, let´s get started!</p>
+            </div>
         </section>
-        <section id="Rendering_Elements" class="main-section">
+
+        <section id="Rendering_Elements" class="container main-section">
             <header>Rendering Elements</header>
+            <div>
+                <p class="important-idea">Elements are the smallest building blocks of React apps.</p>
+                <p>An element decribes what you want to see on the screen:</p>
+                <div class="container code-container">
+                    <code>
+                        <span class="keyword">const</span>
+                        <span class="">element</span>
+                        <span class="puntuation">=</span>
+                        <span class="puntuation"><</span><span class="htmlElement">h1</span><span class="puntuation">></span>
+                        <span class="">Hello, world!</span>
+                        <span class="puntuation">&lt;/</span><span class="htmlElement">h1</span><span class="puntuation">>;</span>
+                    </code>
+                </div>
+                <p>Unlike browser DOM elements, React elements are plain objects, and are cheap to create.
+                    Reacta DOM takes care of updating the DOM to match the React elements.
+                </p>
+                <hr>
+                <h2>Rendering Elements</h2>
+                <p>Let's say there is a <span class="highlight">&lt;div&gt;</span>somewhere in your HTML file:</p>
+                    <div class="container code-container">
+                        
+                    </div>
+            </div>
         </section>
         <section id="Components_and_Props" class="main-section">
             <header>Components and Props</header>

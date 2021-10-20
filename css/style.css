@@ -16,6 +16,11 @@
 .code-container{
     background-color:#282C34;
     max-width: 516px;
+    border-radius: 8px;
+    padding:5px 15px;
+}
+.highlight{
+    background-color: #FFFAE0;
 }
 code{
     background: #282C34;
