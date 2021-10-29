@@ -118,10 +118,10 @@
                 <div class="container code-container">
                     <code>
                         <span class="keyword">const</span>
-                        <span class="">element</span>
+                        <span>element</span>
                         <span class="puntuation">=</span>
                         <span class="puntuation"><</span><span class="htmlElement">h1</span><span class="puntuation">></span>
-                        <span class="">Hello, world!</span>
+                        <span>Hello, world!</span>
                         <span class="puntuation">&lt;/</span><span class="htmlElement">h1</span><span class="puntuation">>;</span>
                     </code>
                 </div>
@@ -131,17 +131,135 @@
                 <hr>
                 <h2>Rendering Elements</h2>
                 <p>Let's say there is a <span class="highlight">&lt;div&gt;</span>somewhere in your HTML file:</p>
-                    <div class="container code-container">
-                        
-                    </div>
+                <div class="container code-container">
+                    <code class="language-javascript">
+                        <span class="puntuation"><</span><span class="htmlElement">div</span>
+                        <span class="htmlAttribute">id</span><span class="puntuation">=</span><span class="string">"root"</span><span class="puntuation">></span>
+                        <span class="puntuation">&lt;/</span><span class="htmlElement">div</span><span class="puntuation">&gt;</span>
+                    </code>
+                </div>
+                <p>We call this a "root" node because everything inside it will be managed by React DOM.</p>
+                <p>Applications built with just React usually have a single root DOM node. If you are integrating
+                    React into an existing app, you may have as many isolated root DOM nodes as you like.</p>
+                <p>To render a React element into a root DOM node, pass both to
+                    <a href="https://reactjs.org/docs/react-dom.html#render">ReactDOM.render()<a>:
+                </p>
+                <div class="container code-container">
+                    <code class="language-javascript">
+                        <span class="js">const</span> element =
+                        <span class="puntuation">&lt;</span><span class="htmlElement">h1</span><span class="puntuation">&gt;</span>
+                        Hello, world
+                        <span class="puntuation">&lt;/</span><span class="htmlElement">h1</span><span class="puntuation">&gt;;</span>
+                        <br>
+                        ReactDOM<span class="puntuation">.</span><span class="keyword">render</span><span class="puntuation">(</span><span class="">element</span><span class="puntuation">,</span>
+                        <span class="">document</span><span class="puntuation">.</span><span class="keyword">getElementById</span><span class="puntuation">(</span><span class="string">'root'</span><span class="puntuation">));</span>
+                    </code>
+                </div>
+                <p>It displays "Hello, world!" on the page.</p>
             </div>
         </section>
-        <section id="Components_and_Props" class="main-section">
+
+        <section id="Components_and_Props" class="container main-section">
             <header>Components and Props</header>
+            <div class="container">
+                <p class="important-idea">Components let you split the UI into independent, reusable pieces, and think
+                    about each piece in isolation.
+                    This page provides an introduction to the idea of components. You can find a
+                    <a href="https://reactjs.org/docs/react-component.html">detailed component API reference here</a>.
+                </p>
+                <p>Conceptually, components are like JavaScript funtions. They accept arbitrary inputs(called "props")
+                    and
+                    return React elements describing what should appear on the screen.</p>
+                <hr>
+                <h2>Function and Class Components</h2>
+                <p>The simplest way to define a component is to write a JavaScript funtion:</p>
+                <div class="container code-container">
+                    <code class="languaje-javascript">
+                        <span class="js">function</span>
+                        <span class="keyword">Welcome</span><span class="puntuation">(</span>props<span class="puntuation">)</span>
+                        <span class="puntuation">{</span><br>
+                        <span class="js">return</span>
+                        <span class="puntuation">&lt;</span><span class="htmlElement">h1</span><span class="puntuation">&gt;</span>Hello,
+                        <span class="puntuation">{</span>props.name<span class="puntuation">}</span><span class="puntuation">&lt;/</span><span class="htmlElement">h1</span><span class="puntuation">&gt;;</span><br>
+                        <span class="puntuation">}</span>
+                    </code>
+                </div>
+                <p>This function is a valid React component because it accepts a single "props" (which stands for
+                    properties) object argument with data and returns a React
+                    element. We call such components "funtion components" because ther are literally JavaScript
+                    functions.
+                </p>
+                <p>You can also use an <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">ES6 class</a>
+                    to define a component.</p>
+                <div class="container code-container">
+                    <code class="language-javascript">
+                        <span class="js">class </span><span class="jsClass">Welcome </span><span class="js">extends </span><span class="jsClass">React</span><span class="puntuation">.</span><span class="jsClass">Component </span><span class="puntuation">{</span>
+                        <br>
+                        <span class="keyword">render</span><span class="puntuation">() {</span>
+                        <br>
+                        <span class="js">return</span><span class="puntuation">&lt;</span><span class="htmlElement">h1</span><span class="puntuation">&gt;</span>Hello, <span class="puntuation">{</span><span class="js">this</span><span class="puntuation">.</span>props.name<span class="puntuation">}</span><span class="puntuation">&lt;/</span><span class="htmlElement">h1</span><span class="puntuation">&gt;;</span>
+                        <br>
+                        <span class="puntuation">}}</span>
+                    </code>
+                </div>
+                <p>The above example two componets are equivalent from React's point of view.</p>
+                <p>Function Class components both have some additional features that we will discuss in the <a
+                        href="#State_and_Lifecycle">next sections</a></p>
+                <hr>
+                <h2>Rendering a Component</h2>
+                <p>Previously, we only encountered React elemnets that represent DOM tags:</p>
+                <div class="container code-container">
+                    <code>
+                        <span class="js">const</span>
+                        element
+                        <span class="">=</span>
+                        <span class="puntuation">&lt;</span><span class="htmlElement">div</span>
+                        <span class="puntuation">/&gt;;</span>
+                    </code>
+                </div>
+                <p>however, elements can also represent user-defined components</p>
+                <div class="container code-container">
+                    <code>
+                        <span class="js">const</span>
+                        element
+                        <span class="puntuation">=</span>
+                        <span class="puntuation"><</span><span class="jsClass">Welcome</span>
+                        <span class="js">name</span><span class="puntuation">=</span><span class="string">"Sara"</span>
+                        <span class="puntuation">&gt;;</span>
+                    </code>
+                </div>
+                <p>When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single
+                    object. We call this object "props".</p>
+                <p>For example, this code renders "Hello, Sara" ont he page:</p>
+                <div class="container code-container">
+                    <code>
+                        <span class="js">function </span><span class="keyword">Welcome </span><span class="puntuation">(</span><span class="">props</span><span class="puntuation">) {</span>
+                        <br>
+                        <span class="js">&nbsp;return </span><span class="puntuation">&lt;</span><span class="htmlElement">h1</span><span class="puntuation">&gt;</span>Hello,
+                        <span class="puntuation">{</span>props<span class="puntuation">.</span>name<span class="puntuation">}</span><span class="puntuation">&lt;/</span><span class="htmlElement">h1</span><span class="puntuation">&gt;;</span>
+                        <br>
+                        <span class="puntuation">}</span>
+                        <br>
+                        <br>
+                        <span class="js">const </span>element <span class="puntuation">= &lt;</span><span class="jsClass">Welcome </span><span class="js">name</span><span class="puntuation">=</span><span class="string">"Sara"</span><span class="puntuation">/>;</span>
+                        <br>
+                        ReactDOM<span class="puntuation">.</span><span class="keyword">render</span><span class="puntuation">(</span>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;element,
+                        <br>
+                        &nbsp;&nbsp;&nbsp;document<span class="puntuation">.</span><span class="keyword">getElementById</span><span class="puntuation">(</span><span class="string">'root'</span><span class="puntuation">)</span>
+                        <br>
+                        <span class="puntuation">);</span>
+                    </code>
+                </div>
+            </div>
         </section>
+
         <section id="State_and_Lifecycle" class="main-section">
             <header>State and Lifecycle</header>
         </section>
+
         <section id="Handling_Events" class="main-section">
             <header>Handling Events</header>
         </section>

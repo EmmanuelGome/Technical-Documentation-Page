@@ -7,6 +7,12 @@
 .htmlElement{
     color:#FC929E;
 }
+.htmlAttribute,.js{
+    color:#BBA5C5;
+}
+.jsClass{
+    color:#FAC854;
+}
 .string{
     color:#8DC891;
 }
@@ -23,7 +29,6 @@
     background-color: #FFFAE0;
 }
 code{
-    background: #282C34;
     color: #FFFFFF;
     line-height: 0px;
 }
